@@ -10,7 +10,6 @@ export default class VideoDetail extends React.Component {
     render() {
         const { videoId, videoDetail, statisticVideo } = this.props;
         const url = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-        console.log(statisticVideo);
         
         return (
             <Grid item md={8} sm={8} xs={12}>

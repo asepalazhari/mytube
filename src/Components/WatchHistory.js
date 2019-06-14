@@ -64,7 +64,7 @@ class WatchHistory extends React.Component {
                                                 </CardActionArea>
                                             </Card>
                                         </Grid>
-                                        <Grid style={{ padding: 15 }}  component={Link} to={videoId} xs={12} sm={9}>
+                                        <Grid style={{ padding: 15 }} item component={Link} to={videoId} xs={12} sm={9}>
                                             <Typography variant="subtitle1" color="textPrimary">
                                                 {result.title} 
                                             </Typography>
@@ -81,7 +81,7 @@ class WatchHistory extends React.Component {
                             :
                             countVideos.map((result, index) => {
                                 return (
-                                    <Grid container spacing={3}>
+                                    <Grid key={index} container spacing={3}>
                                         <Grid item xs={12} sm={3}>
                                             <Skeleton duration={1} height={150} />
                                         </Grid>
