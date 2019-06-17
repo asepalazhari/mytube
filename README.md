@@ -23,4 +23,4 @@ Klik [sini](https://github.com/asepalazhari/mytube/archive/master.zip) Kemudian 
 ```
 
 #### Deployed in Netlify
-Project ini sudah di deploy di Netlify. Akses di [sini]()
+Project ini sudah di deploy di Netlify. Akses di [sini](https://mytubeid.netlify.com/)
