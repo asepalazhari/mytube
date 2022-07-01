@@ -24,7 +24,7 @@ class HomeVideo extends React.Component {
 
     fetchVideos = (param) => {
         axios
-            .get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${param}&regionCode=ID&maxResults=10&key=AIzaSyBdVut9QCzqAHBzfDEh30yUp4E529som6s`)
+            .get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${param}&regionCode=ID&maxResults=10&key=AIzaSyCWD-_52W59TgfoG9EWN0hrnyBV_cCwKyg`)
             .then(response => {
                 setTimeout(() => {
                     this.setState({ video1: response.data.items })
@@ -34,7 +34,7 @@ class HomeVideo extends React.Component {
 
     fetchVideos2 = (param) => {
         axios
-            .get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${param}&regionCode=ID&maxResults=10&key=AIzaSyBdVut9QCzqAHBzfDEh30yUp4E529som6s`)
+            .get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${param}&regionCode=ID&maxResults=10&key=AIzaSyCWD-_52W59TgfoG9EWN0hrnyBV_cCwKyg`)
             .then(response => {
                 setTimeout(() => {
                     this.setState({ video2: response.data.items})
@@ -44,7 +44,7 @@ class HomeVideo extends React.Component {
 
     fetchVideos3 = (param) => {
         axios
-            .get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${param}&regionCode=ID&maxResults=10&key=AIzaSyBdVut9QCzqAHBzfDEh30yUp4E529som6s`)
+            .get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${param}&regionCode=ID&maxResults=10&key=AIzaSyCWD-_52W59TgfoG9EWN0hrnyBV_cCwKyg`)
             .then(response => {
                 setTimeout(() => {
                     this.setState({ video3: response.data.items })
@@ -54,7 +54,7 @@ class HomeVideo extends React.Component {
 
     fetchVideos4 = (param) => {
         axios
-            .get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${param}&regionCode=ID&maxResults=10&key=AIzaSyBdVut9QCzqAHBzfDEh30yUp4E529som6s`)
+            .get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${param}&regionCode=ID&maxResults=10&key=AIzaSyCWD-_52W59TgfoG9EWN0hrnyBV_cCwKyg`)
             .then(response => {
                 setTimeout(() => {
                     this.setState({ video4: response.data.items })

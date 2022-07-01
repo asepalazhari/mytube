@@ -4,7 +4,7 @@ import axios from "axios";
 export const fetchVideosHome = (param) => {
     return (dispatch) => {
         axios
-            .get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${param}&regionCode=ID&maxResults=5&key=AIzaSyBdVut9QCzqAHBzfDEh30yUp4E529som6s`)
+            .get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${param}&regionCode=ID&maxResults=5&key=AIzaSyCWD-_52W59TgfoG9EWN0hrnyBV_cCwKyg`)
             .then(response => {
                 setTimeout(() => {
                     dispatch(getFeedVideos(response.data.items))
@@ -16,7 +16,7 @@ export const fetchVideosHome = (param) => {
 export const fetchSpesifikVideo = (videoId) => {
     return (dispatch) => {
         axios
-            .get(`https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=AIzaSyBdVut9QCzqAHBzfDEh30yUp4E529som6s`)
+            .get(`https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=AIzaSyCWD-_52W59TgfoG9EWN0hrnyBV_cCwKyg`)
             .then(response => {
                 let date = new Date();
                 let saveData = {
@@ -48,7 +48,7 @@ export const fetchSpesifikVideo = (videoId) => {
 export const fetchRelated = (videoId) => {
     return (dispatch) => {
         axios
-            .get(`https://www.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${videoId}&type=video&key=AIzaSyBdVut9QCzqAHBzfDEh30yUp4E529som6s`)
+            .get(`https://www.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${videoId}&type=video&key=AIzaSyCWD-_52W59TgfoG9EWN0hrnyBV_cCwKyg`)
             .then(response => {
                 setTimeout(() => {
                     dispatch(getRelatedVideos(response.data.items));
@@ -61,7 +61,7 @@ export const fetchRelated = (videoId) => {
 export const fetchStatsVideo = (videoId) => {
     return (dispatch) => {
         axios
-            .get(`https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoId}&key=AIzaSyBdVut9QCzqAHBzfDEh30yUp4E529som6s`)
+            .get(`https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoId}&key=AIzaSyCWD-_52W59TgfoG9EWN0hrnyBV_cCwKyg`)
             .then(response => {
                 dispatch(getStatsVideo(response.data.items));
             });
@@ -71,7 +71,7 @@ export const fetchStatsVideo = (videoId) => {
 export const fetchTrendingVideos = () => {
     return (dispatch) => {
         axios
-            .get(`https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&regionCode=ID&maxResults=15&key=AIzaSyBdVut9QCzqAHBzfDEh30yUp4E529som6s`)
+            .get(`https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&regionCode=ID&maxResults=15&key=AIzaSyCWD-_52W59TgfoG9EWN0hrnyBV_cCwKyg`)
             .then(response => {
                 setTimeout(() => {
                     dispatch(getTrendingVideo(response.data.items));
@@ -83,7 +83,7 @@ export const fetchTrendingVideos = () => {
 export const fetchSearchVideos = (param) => {
     return (dispatch) => {
         axios
-            .get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${param}&regionCode=ID&maxResults=12&key=AIzaSyBdVut9QCzqAHBzfDEh30yUp4E529som6s`)
+            .get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${param}&regionCode=ID&maxResults=12&key=AIzaSyCWD-_52W59TgfoG9EWN0hrnyBV_cCwKyg`)
             .then(response => {
                 setTimeout(() => {
                     dispatch(getSeachVideo(response.data.items));
