@@ -9,6 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import HomeIcon from '@material-ui/icons/Home';
 import WhatsHot from '@material-ui/icons/Whatshot';
 import RepeatIcon from '@material-ui/icons/Repeat';
+import BadgeIcon from '@material-ui/icons/Person';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -120,12 +121,16 @@ const NavDrawer = (props) => {
                     <ListItemIcon><WhatsHot /></ListItemIcon>
                     <ListItemText primary="Trending" />
                 </ListItem>
-            </List>
-            <Divider />
-            <List>
                 <ListItem component={Link} to="/history" button>
                     <ListItemIcon><RepeatIcon /></ListItemIcon>
                     <ListItemText primary="History" />
+                </ListItem>
+            </List>
+            <Divider />
+            <List>
+                <ListItem>
+                    <ListItemIcon><BadgeIcon /></ListItemIcon>
+                    <ListItemText variant="h6" primary="Created by Alazhari" />
                 </ListItem>
             </List>
         </div>

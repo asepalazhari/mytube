@@ -23,19 +23,21 @@ export default class VideoList extends React.Component {
                     {
                         videos.length ?
                             videos.map((video, index) => {
-                                const videoId = `/watch?v=${video.id.videoId}`;
-                                return (
-                                    <li key={index} className="list-group-item">
-                                        <a href={videoId} className="video-list media">
-                                            <div className="media-left">
-                                                <img alt={video.snippet.title} width="150" height="90" className="media-object" src={video.snippet.thumbnails.high.url} />
-                                            </div>
-                                            <div style={{ color: 'black' }} className="media-body">
-                                                <div className="media-heading">{this.truncateDescription(video.snippet.title)}</div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                )
+                                if (video.snippet && video.snippet.title) {
+                                    const videoId = `/watch?v=${video.id.videoId}`;
+                                    return (
+                                        <li key={index} className="list-group-item">
+                                            <a href={videoId} className="video-list media">
+                                                <div className="media-left">
+                                                    <img alt={video.snippet.title} width="150" height="90" className="media-object" src={video.snippet.thumbnails.high.url} />
+                                                </div>
+                                                <div style={{ color: 'black' }} className="media-body">
+                                                    <div className="media-heading">{this.truncateDescription(video.snippet.title)}</div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    );
+                                }
                             })
                             :
                             <div>

@@ -1,5 +1,4 @@
 import React from 'react';
-import Skeleton from 'react-loading-skeleton';
 import Grid from '@material-ui/core/Grid';
 import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
@@ -33,20 +32,19 @@ class WatchHistory extends React.Component {
     }
 
     getDataWatchHistory = () => {
-        let lastHistoryWatch = JSON.parse(localStorage.getItem('historyWatch'));
+        let lastHistoryWatch = localStorage.getItem('historyWatch') ? JSON.parse(localStorage.getItem('historyWatch')) : [];
         setTimeout(() => {
-            this.setState({videoHistory: lastHistoryWatch.reverse()})
+            this.setState({videoHistory: lastHistoryWatch ? lastHistoryWatch.reverse() : ''});
         }, 1000);
     }
 
     render() {
-        const { countVideos } = this.props;
         const { videoHistory } = this.state;
         return (
             <div>
                 <Grid style={{padding:20}}>
                     {
-                        videoHistory.length ?
+                        videoHistory.length  ?
                             videoHistory.map((result, index) => {
                                 const videoId = `/watch?v=${result.id}`;
                                 return (
@@ -79,20 +77,11 @@ class WatchHistory extends React.Component {
                                 );
                             })
                             :
-                            countVideos.map((result, index) => {
-                                return (
-                                    <Grid key={index} container spacing={3}>
-                                        <Grid item xs={12} sm={3}>
-                                            <Skeleton duration={1} height={150} />
-                                        </Grid>
-                                        <Grid item xs={12} sm={9}>
-                                            <Skeleton duration={1} height={25} />
-                                            <Skeleton duration={1} height={25} />
-                                            <Skeleton duration={1} width={100} height={25} />
-                                        </Grid>
-                                    </Grid>
-                                );
-                            })
+                            <Grid container spacing={3}>
+                                <Grid item xs={12} sm={3}>
+                                    Data empty
+                                </Grid>
+                            </Grid>
                     }
                 </Grid>
             </div>
