@@ -5,7 +5,7 @@
   "dependencies": {
     "@material-ui/core": "4.0.1",
     "@material-ui/icons": "4.0.1",
-    "axios": "^0.18.0",
+    "axios": "^0.21.2",
     "decode-html": "^2.0.0",
     "dotenv": "^16.0.1",
     "moment": "2.24.0",
